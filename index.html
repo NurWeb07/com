@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Профессиональный сайт под ключ</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #6366f1 0%, #3b82f6 100%);
+        }
+        
+        .btn-hover {
+            transition: all 0.3s ease;
+            transform: translateY(0);
+        }
+        
+        .btn-hover:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px -5px rgba(59, 130, 246, 0.4);
+        }
+        
+        .feature-card {
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(59, 130, 246, 0.2);
+            border-color: rgba(99, 102, 241, 0.3);
+        }
+        
+        .review-card {
+            transition: all 0.3s ease;
+        }
+        
+        .review-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+        
+        .language-switcher {
+            position: relative;
+        }
+        
+        .language-dropdown {
+            display: none;
+            position: absolute;
+            right: 0;
+            top: 100%;
+            min-width: 120px;
+            z-index: 10;
+        }
+        
+        .language-switcher:hover .language-dropdown {
+            display: block;
+        }
+        
+        .faq-item {
+            transition: all 0.3s ease;
+        }
+        
+        .faq-item:hover {
+            background-color: rgba(243, 244, 246, 0.5);
+        }
+        
+        .hero-image {
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 100;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+            70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- WhatsApp Float Button -->
+    <div class="whatsapp-float">
+        <a href="https://wa.me/87474763446" target="_blank" class="bg-green-500 text-white w-16 h-16 rounded-full flex items-center justify-center text-3xl shadow-lg">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+    </div>
+
+    <!-- Header -->
+    <header class="sticky top-0 z-50 bg-white shadow-sm">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <div class="w-10 h-10 rounded-full gradient-bg flex items-center justify-center text-white font-bold text-xl">WS</div>
+                <span class="text-xl font-semibold text-gray-800">WebSolutions</span>
+            </div>
+            
+            <nav class="hidden md:flex space-x-8">
+                <a href="#services" class="text-gray-600 hover:text-indigo-600 transition">Услуги</a>
+                <a href="#features" class="text-gray-600 hover:text-indigo-600 transition">Преимущества</a>
+                <a href="#reviews" class="text-gray-600 hover:text-indigo-600 transition">Отзывы</a>
+                <a href="#faq" class="text-gray-600 hover:text-indigo-600 transition">FAQ</a>
+            </nav>
+            
+            <div class="flex items-center space-x-4">
+                <div class="language-switcher relative">
+                    <button class="flex items-center space-x-1 text-gray-600 hover:text-indigo-600">
+                        <span>Русский</span>
+                        <i class="fas fa-chevron-down text-xs"></i>
+                    </button>
+                    <div class="language-dropdown mt-2 bg-white rounded-lg shadow-lg py-2">
+                        <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Русский</a>
+                        <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Қазақша</a>
+                    </div>
+                </div>
+                
+                <a href="https://wa.me/87474763446" target="_blank" class="hidden md:block bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-2 rounded-full btn-hover transition">
+                    Заказать
+                </a>
+            </div>
+            
+            <button class="md:hidden text-gray-600">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="gradient-bg text-white">
+        <div class="container mx-auto px-4 py-20 md:py-28">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0">
+                    <h1 class="text-4xl md:text-5xl font-bold mb-6 leading-tight">Профессиональный сайт для вашего бизнеса</h1>
+                    <p class="text-xl mb-8 opacity-90">Создаем современные, адаптивные сайты с подключением мессенджеров для быстрой связи с клиентами.</p>
+                    <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                        <a href="https://wa.me/87474763446" target="_blank" class="bg-white text-indigo-600 hover:bg-gray-100 px-8 py-3 rounded-full font-medium btn-hover text-center">
+                            Заказать сейчас
+                        </a>
+                        <a href="#services" class="border-2 border-white text-white hover:bg-white hover:text-indigo-600 px-8 py-3 rounded-full font-medium btn-hover text-center">
+                            Наши услуги
+                        </a>
+                    </div>
+                </div>
+                <div class="md:w-1/2 flex justify-center">
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Website Development" class="hero-image rounded-xl shadow-2xl w-full max-w-lg">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Наши услуги</h2>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto">Мы предлагаем полный цикл разработки сайтов для вашего бизнеса</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="feature-card bg-gray-50 p-8 rounded-xl">
+                    <div class="w-16 h-16 gradient-bg rounded-lg flex items-center justify-center text-white mb-6">
+                        <i class="fas fa-laptop-code text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3 text-gray-800">Сайт под ключ</h3>
+                    <p class="text-gray-600">Полный цикл разработки от дизайна до запуска. Индивидуальный подход к каждому проекту.</p>
+                </div>
+                
+                <div class="feature-card bg-gray-50 p-8 rounded-xl">
+                    <div class="w-16 h-16 gradient-bg rounded-lg flex items-center justify-center text-white mb-6">
+                        <i class="fas fa-mobile-alt text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3 text-gray-800">Адаптивный дизайн</h3>
+                    <p class="text-gray-600">Сайты, которые идеально отображаются на всех устройствах - от смартфонов до компьютеров.</p>
+                </div>
+                
+                <div class="feature-card bg-gray-50 p-8 rounded-xl">
+                    <div class="w-16 h-16 gradient-bg rounded-lg flex items-center justify-center text-white mb-6">
+                        <i class="fas fa-comment-dots text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3 text-gray-800">Подключение мессенджеров</h3>
+                    <p class="text-gray-600">Интеграция WhatsApp, Telegram и Instagram для мгновенной связи с клиентами.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0">
+                    <img src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1469&q=80" alt="Website Features" class="rounded-xl shadow-lg w-full">
+                </div>
+                <div class="md:w-1/2 md:pl-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-6">Почему выбирают нас</h2>
+                    
+                    <div class="space-y-6">
+                        <div class="flex">
+                            <div class="flex-shrink-0">
+                                <div class="flex items-center justify-center h-12 w-12 rounded-full bg-indigo-100 text-indigo-600">
+                                    <i class="fas fa-bolt"></i>
+                                </div>
+                            </div>
+                            <div class="ml-4">
+                                <h3 class="text-lg font-medium text-gray-800">Быстрая разработка</h3>
+                                <p class="mt-2 text-gray-600">Средний срок создания сайта - 7-14 дней в зависимости от сложности проекта.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex">
+                            <div class="flex-shrink-0">
+                                <div class="flex items-center justify-center h-12 w-12 rounded-full bg-indigo-100 text-indigo-600">
+                                    <i class="fas fa-shield-alt"></i>
+                                </div>
+                            </div>
+                            <div class="ml-4">
+                                <h3 class="text-lg font-medium text-gray-800">Безопасность</h3>
+                                <p class="mt-2 text-gray-600">Защита от взлома, регулярные обновления и резервное копирование данных.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex">
+                            <div class="flex-shrink-0">
+                                <div class="flex items-center justify-center h-12 w-12 rounded-full bg-indigo-100 text-indigo-600">
+                                    <i class="fas fa-chart-line"></i>
+                                </div>
+                            </div>
+                            <div class="ml-4">
+                                <h3 class="text-lg font-medium text-gray-800">SEO оптимизация</h3>
+                                <p class="mt-2 text-gray-600">Базовая SEO-оптимизация включена в каждый проект для лучшей видимости в поиске.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section id="reviews" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Отзывы клиентов</h2>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto">Что говорят о нас наши клиенты</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="review-card bg-gray-50 p-8 rounded-xl">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full bg-indigo-100 flex items-center justify-center text-indigo-600 font-bold">АК</div>
+                        <div class="ml-4">
+                            <h4 class="font-semibold">Алексей К.</h4>
+                            <div class="flex text-yellow-400 mt-1">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600">"Заказал сайт для своего магазина. Сделали быстро, подключили WhatsApp для заказов. Клиенты теперь могут писать напрямую - очень удобно!"</p>
+                </div>
+                
+                <div class="review-card bg-gray-50 p-8 rounded-xl">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full bg-indigo-100 flex items-center justify-center text-indigo-600 font-bold">ДС</div>
+                        <div class="ml-4">
+                            <h4 class="font-semibold">Данара С.</h4>
+                            <div class="flex text-yellow-400 mt-1">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600">"Отличная работа! Сайт адаптирован под мобильные устройства, что очень важно для моего бизнеса. Поддержка всегда на связи."</p>
+                </div>
+                
+                <div class="review-card bg-gray-50 p-8 rounded-xl">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full bg-indigo-100 flex items-center justify-center text-indigo-600 font-bold">МБ</div>
+                        <div class="ml-4">
+                            <h4 class="font-semibold">Максим Б.</h4>
+                            <div class="flex text-yellow-400 mt-1">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600">"Сделали сайт для моей студии дизайна. Учтены все пожелания, красивый современный дизайн. Рекомендую!"</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Часто задаваемые вопросы</h2>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto">Ответы на популярные вопросы о наших услугах</p>
+            </div>
+            
+            <div class="max-w-3xl mx-auto">
+                <div class="faq-item bg-white rounded-lg shadow-sm mb-4 overflow-hidden">
+                    <button class="w-full px-6 py-4 text-left flex justify-between items-center">
+                        <span class="text-lg font-medium text-gray-800">Сколько времени занимает создание сайта?</span>
+                        <i class="fas fa-chevron-down text-indigo-600 transition-transform duration-300"></i>
+                    </button>
+                    <div class="px-6 pb-4 hidden">
+                        <p class="text-gray-600">Срок разработки зависит от сложности проекта. Лендинг - 5-7 дней, корпоративный сайт - 10-14 дней, интернет-магазин - от 3 недель. Мы всегда согласовываем сроки перед началом работы.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item bg-white rounded-lg shadow-sm mb-4 overflow-hidden">
+                    <button class="w-full px-6 py-4 text-left flex justify-between items-center">
+                        <span class="text-lg font-medium text-gray-800">Можно ли подключить оплату на сайте?</span>
+                        <i class="fas fa-chevron-down text-indigo-600 transition-transform duration-300"></i>
+                    </button>
+                    <div class="px-6 pb-4 hidden">
+                        <p class="text-gray-600">Да, мы интегрируем различные платежные системы: Kaspi, Halyk Bank, Stripe, PayPal и другие. Подберем оптимальное решение для вашего бизнеса.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item bg-white rounded-lg shadow-sm mb-4 overflow-hidden">
+                    <button class="w-full px-6 py-4 text-left flex justify-between items-center">
+                        <span class="text-lg font-medium text-gray-800">Вы предоставляете хостинг и домен?</span>
+                        <i class="fas fa-chevron-down text-indigo-600 transition-transform duration-300"></i>
+                    </button>
+                    <div class="px-6 pb-4 hidden">
+                        <p class="text-gray-600">Мы можем помочь с регистрацией домена и настройкой хостинга. Эти услуги оплачиваются отдельно. Также вы можете использовать свой хостинг - мы адаптируем сайт под ваши условия.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item bg-white rounded-lg shadow-sm mb-4 overflow-hidden">
+                    <button class="w-full px-6 py-4 text-left flex justify-between items-center">
+                        <span class="text-lg font-medium text-gray-800">Как происходит процесс разработки?</span>
+                        <i class="fas fa-chevron-down text-indigo-600 transition-transform duration-300"></i>
+                    </button>
+                    <div class="px-6 pb-4 hidden">
+                        <p class="text-gray-600">1. Обсуждение проекта и составление ТЗ<br>2. Создание дизайн-макета<br>3. Верстка и программирование<br>4. Тестирование и исправление ошибок<br>5. Запуск и обучение работе с сайтом</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item bg-white rounded-lg shadow-sm mb-4 overflow-hidden">
+                    <button class="w-full px-6 py-4 text-left flex justify-between items-center">
+                        <span class="text-lg font-medium text-gray-800">Есть ли у вас поддержка после запуска?</span>
+                        <i class="fas fa-chevron-down text-indigo-600 transition-transform duration-300"></i>
+                    </button>
+                    <div class="px-6 pb-4 hidden">
+                        <p class="text-gray-600">Да, мы предоставляем гарантийную поддержку в течение 1 месяца после запуска. Также вы можете оформить договор на постоянное сопровождение сайта.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="gradient-bg text-white py-16">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6">Готовы создать профессиональный сайт?</h2>
+            <p class="text-xl mb-8 max-w-2xl mx-auto opacity-90">Свяжитесь с нами прямо сейчас и получите бесплатную консультацию по вашему проекту.</p>
+            <a href="https://wa.me/87474763446" target="_blank" class="inline-block bg-white text-indigo-600 hover:bg-gray-100 px-8 py-3 rounded-full font-medium btn-hover">
+                Написать в WhatsApp
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center space-x-2 mb-4">
+                        <div class="w-10 h-10 rounded-full gradient-bg flex items-center justify-center text-white font-bold text-xl">WS</div>
+                        <span class="text-xl font-semibold">WebSolutions</span>
+                    </div>
+                    <p class="text-gray-400">Профессиональное создание сайтов под ключ с 2020 года.</p>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Услуги</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Сайты под ключ</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Адаптивный дизайн</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Подключение мессенджеров</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">SEO оптимизация</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Контакты</h3>
+                    <ul class="space-y-2">
+                        <li class="flex items-center text-gray-400">
+                            <i class="fas fa-phone-alt mr-2"></i>
+                            <a href="tel:+77474763446" class="hover:text-white transition">+7 747 476 34 46</a>
+                        </li>
+                        <li class="flex items-center text-gray-400">
+                            <i class="fab fa-whatsapp mr-2"></i>
+                            <a href="https://wa.me/87474763446" target="_blank" class="hover:text-white transition">WhatsApp</a>
+                        </li>
+                        <li class="flex items-center text-gray-400">
+                            <i class="fas fa-envelope mr-2"></i>
+                            <a href="mailto:info@websolutions.kz" class="hover:text-white transition">info@websolutions.kz</a>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Соцсети</h3>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-white hover:bg-indigo-600 transition">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-white hover:bg-blue-500 transition">
+                            <i class="fab fa-telegram-plane"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-white hover:bg-blue-700 transition">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 mb-4 md:mb-0">© 2023 WebSolutions. Все права защищены.</p>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-white transition">Политика конфиденциальности</a>
+                    <a href="#" class="text-gray-400 hover:text-white transition">Условия использования</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // FAQ Accordion
+        document.querySelectorAll('.faq-item button').forEach(button => {
+            button.addEventListener('click', () => {
+                const faqItem = button.parentElement;
+                const content = button.nextElementSibling;
+                const icon = button.querySelector('i');
+                
+                // Close all other items
+                document.querySelectorAll('.faq-item').forEach(item => {
+                    if (item !== faqItem) {
+                        item.querySelector('div').classList.add('hidden');
+                        item.querySelector('i').classList.remove('fa-chevron-up');
+                        item.querySelector('i').classList.add('fa-chevron-down');
+                    }
+                });
+                
+                // Toggle current item
+                content.classList.toggle('hidden');
+                icon.classList.toggle('fa-chevron-up');
+                icon.classList.toggle('fa-chevron-down');
+            });
+        });
+        
+        // Mobile menu toggle (placeholder)
+        document.querySelector('header button.md\\:hidden').addEventListener('click', () => {
+            alert('Мобильное меню будет реализовано в полной версии сайта');
+        });
+        
+        // Language switcher (placeholder)
+        document.querySelectorAll('.language-dropdown a').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const lang = link.textContent;
+                document.querySelector('.language-switcher button span').textContent = lang;
+                alert(`Язык изменен на ${lang}. В полной версии будет реализовано переключение контента.`);
+            });
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                if (this.getAttribute('href') !== '#') {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth'
+                        });
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
